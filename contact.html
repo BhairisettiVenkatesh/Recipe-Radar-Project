@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Contact - Find Recipe</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+</head>
+<body>
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="nav-left">
+      <span class="logo-icon"><i class="fa-solid fa-utensils"></i></span>
+      <span class="logo-text">Find Recipe</span>
+    </div>
+
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="favourites.html">Favorite</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main style="margin-top: 70px;">
+    <section id="contact" class="info-section">
+      <h2>Contact Us</h2>
+      <p>If you have any suggestions or feedback, feel free to contact us!</p>
+
+      <form id="contact-form" class="contact-form">
+        <label>Email:</label>
+        <input type="email" id="email" placeholder="Enter your email" required />
+
+        <label>Phone Number:</label>
+        <input type="text" id="phone" placeholder="Enter your phone number" required />
+
+        <label>Feedback:</label>
+        <textarea id="feedback" rows="5" placeholder="Write your feedback here..." required></textarea>
+
+        <button type="submit" class="btn-primary">Submit</button>
+      </form>
+
+      <p id="contact-message" style="margin-top:1rem;color:#0f0;display:none;">
+        Thank you for your feedback!
+      </p>
+    </section>
+  </main>
+
+  <script>
+    const contactForm = document.getElementById("contact-form");
+    const contactMsg = document.getElementById("contact-message");
+
+    contactForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      // You can add real backend / Google Sheets later
+      contactMsg.style.display = "block";
+      contactForm.reset();
+    });
+  </script>
+</body>
+</html>
