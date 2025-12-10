@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Find Recipe</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+</head>
+<body>
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="nav-left">
+      <span class="logo-icon"><i class="fa-solid fa-utensils"></i></span>
+      <span class="logo-text">Recipe Radar</span>
+    </div>
+
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="favourites.html">Favorite</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+      <div class="hero-text">
+        <h1>
+          Find your<br />
+          Favourite<br />
+          Recipe
+        </h1>
+
+        <form id="search-form" class="search-bar">
+          <input
+            type="text"
+            id="search-input"
+            placeholder="Enter Recipe"
+            autocomplete="off"
+            required
+          />
+          <button type="submit">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </form>
+
+        <p class="hero-subtext">
+          Search for variety of recipes and save your favourites for later.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Search Results -->
+  <main>
+    <section id="results" class="recipes-section">
+      <h2 class="section-title">Search Results</h2>
+      <p id="results-info" class="section-subtitle">
+        Type a recipe name and press search to begin.
+      </p>
+
+      <div id="recipes-container" class="recipes-grid">
+        <!-- Recipe cards will be injected here -->
+      </div>
+    </section>
+  </main>
+
+  <!-- Recipe Detail Modal -->
+  <div id="recipe-modal" class="modal hidden">
+    <div class="modal-content">
+      <button class="modal-close" id="modal-close">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div class="modal-body">
+        <div class="modal-text">
+          <h2 id="modal-title"></h2>
+
+          <h3>Ingredients:</h3>
+          <ul id="modal-ingredients"></ul>
+
+          <h3>Instructions:</h3>
+          <p id="modal-instructions"></p>
+
+          <p id="modal-source-wrapper">
+            For detailed instructions, please visit the
+            <a href="#" id="modal-source-link" target="_blank">Recipe Instruction</a>
+          </p>
+
+          <button id="favorite-btn" class="btn-primary">
+            Add to Favorites
+          </button>
+        </div>
+
+        <div class="modal-image-wrapper">
+          <img id="modal-image" alt="Recipe Image" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Overlay -->
+  <div id="overlay" class="overlay hidden"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
