@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Your Favorite Recipes</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+</head>
+<body>
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="nav-left">
+      <span class="logo-icon"><i class="fa-solid fa-utensils"></i></span>
+      <span class="logo-text">Find Recipe</span>
+    </div>
+
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="favourites.html">Favorite</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main style="margin-top: 70px;">
+    <section class="recipes-section">
+      <h2 class="section-title">Your Favorites</h2>
+      <p class="section-subtitle">
+        Recipes you have saved will appear here.
+      </p>
+
+      <div id="favorites-container" class="recipes-grid">
+        <!-- Favorite cards injected here -->
+      </div>
+    </section>
+  </main>
+
+  <!-- Modal (same as home) -->
+  <div id="recipe-modal" class="modal hidden">
+    <div class="modal-content">
+      <button class="modal-close" id="modal-close">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div class="modal-body">
+        <div class="modal-text">
+          <h2 id="modal-title"></h2>
+
+          <h3>Ingredients:</h3>
+          <ul id="modal-ingredients"></ul>
+
+          <h3>Instructions:</h3>
+          <p id="modal-instructions"></p>
+
+          <p id="modal-source-wrapper">
+            For detailed instructions, please visit the
+            <a href="#" id="modal-source-link" target="_blank">Recipe Instruction</a>
+          </p>
+
+          <button id="favorite-btn" class="btn-primary">
+            Remove from Favorites
+          </button>
+        </div>
+
+        <div class="modal-image-wrapper">
+          <img id="modal-image" alt="Recipe Image" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="overlay" class="overlay hidden"></div>
+
+  <script src="favourites.js"></script>
+</body>
+</html>
